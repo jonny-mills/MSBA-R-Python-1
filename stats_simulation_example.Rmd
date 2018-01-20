@@ -1,0 +1,71 @@
+---
+title: "simulation_statistics_code"
+author: "Jonny Mills"
+date: "January 18, 2018"
+output:
+  word_document: default
+  pdf_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+## Simulation example
+
+Using R, I used simulation to determine the different levels of expected profit based on the capacity level of a building.  This problem was taken from my Prob & Stats final in the fall.
+
+
+## Problem
+The annual demand for Wozac, a prescription drug manufactured and marketed by the NuFeelCompany,is normally distributed with mean 50,000 and standard deviation 12,000. We assume that demand during each of the next 10 years is an independent random draw from this distribution. NuFeel needs to determine how large a Wozac plant to build to maximize its expected pro???t over the next 10 years. If the company builds a plant that can produce x units of Wozac per year, it will cost $16 for each of these x units. NuFeel will produce only the amount demanded each year, and each unit of Wozac produced will sell for $3.70. Each unit of Wozac produced incurs a variable production cost of $0.20. It costs $0.40 per year to operate a unit of capacity. 1. Among the capacity levels of 30K,35K,40K,45K,50K,55K,and 60K units per year, which level maximizes expected profit? Use simulation to answer the question. 
+
+
+## Which level maximizes expected profit?
+
+50K maximizes expected profit. 
+
+
+```{r}
+#Drugs
+rm(list=ls())
+
+
+capacity_levels = seq(from=30000,to=60000,by = 5000)  #7 different capacity levels
+
+set.seed(1)
+sims=20000 #running 20,000 simulations
+
+#annual demand is normally distributed mean 50,000 and SD 12,000
+demand = rnorm(n=sims, mean = 50000, sd = 12000)
+sum_profit = 0
+initial_production_cost = c()
+profit = c()
+net_profit = c()
+
+for (k in 1:sims){ #this outer for loop runs the simulations 20,000 times
+      for (j in 1:7){
+            initial_production_cost[j] = 16 * capacity_levels[j] #different production cost depending on what the capcity level is 
+            min <- min(c(capacity_levels[j],demand[k])) #min of demand and capacity level will be the units solds
+            
+            for (i in 1:10){ #10 different years of profit
+                  (profit[i] = 3.70 * (min) - .2 * (min) - .40 * (capacity_levels[j]))
+            }
+            net_profit[j] = sum(profit) - initial_production_cost[j]
+      }
+      sum_profit = sum_profit+net_profit
+}
+
+Profs <- matrix(data= c(capacity_levels,sum_profit/sims), nrow=7,ncol=2) #putting different profit levels into a matrix form
+dimnames(Profs) <- list(NULL,c('Quantity','Profit'))
+Profs
+plot(Profs)
+lines(Profs)
+abline(v=Profs[,1][which.max(Profs[,2])],lty=2)
+optimal_capacity = Profs[,1][which.max(Profs[,2])]
+expected_profit = Profs[,2][which.max(Profs[,2])]
+
+print(paste("Running 20,000 simulations, the optimal capacity is", optimal_capacity ))
+print(paste("This will yield an average return of $", round(expected_profit,2)))
+
+```
