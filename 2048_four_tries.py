@@ -1,3 +1,5 @@
+#note in order for this to work, you need to have selenium installed on your computer, as well as firefox.
+
 from selenium import webdriver 
 from selenium.webdriver.common.keys import Keys 
 
@@ -18,38 +20,3 @@ for i in range(1,5):
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-'''
-
-for i in range(1,10):
-    htmlElem.send_keys(Keys.UP)
-    htmlElem.send_keys(Keys.DOWN)
-    for k in range(1,20):
-        htmlElem.send_keys(Keys.LEFT)
-        htmlElem.send_keys(Keys.DOWN)
-
-'''
-
-
-#linkElem = browser.find_element_by_link_text('Try again')
-#linkElem.click()
