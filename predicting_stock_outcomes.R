@@ -1,7 +1,7 @@
 
 #Author: Jonny Mills
-#In this problem, I use the Weekly data set, which is part of the ISLR package,
-#to use classification methods and predict stock outcomes using data from 1990-2010.
+# In this problem, I used R to analyze a data set (called Weekly, which contains stock outcomes and information from 1990-2010).
+# Here, I use classification methods to predict stock outcomes
 
 rm(list=ls())
 options(warn=-1)   # Supress warning messages
