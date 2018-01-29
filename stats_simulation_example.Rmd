@@ -44,11 +44,11 @@ profit = c()
 net_profit = c()
 
 for (k in 1:sims){ #this outer for loop runs the simulations 20,000 times
-      for (j in 1:7){
+      for (j in 1:7){ #this for loop is looping through each seven possible production levels: from 30k to 60k)
             initial_production_cost[j] = 16 * capacity_levels[j] #different production cost depending on what the capcity level is 
             min <- min(c(capacity_levels[j],demand[k])) #min of demand and capacity level will be the units solds
             
-            for (i in 1:10){ #10 different years of profit
+            for (i in 1:10){ #profit for each of the 10 years of production
                   (profit[i] = 3.70 * (min) - .2 * (min) - .40 * (capacity_levels[j]))
             }
             net_profit[j] = sum(profit) - initial_production_cost[j]
