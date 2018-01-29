@@ -1,13 +1,11 @@
 # -*- coding: utf-8 -*-
 """
 Created on Thu Sep 28 13:48:26 2017
-
 @author: Jonny Mills
 """
 
-#I wrote a program that does a bisection search to find the kth root of N within .001
-#For example, you enter in 2 parameters, N=25 and K=2, and the program will do a binary search to find the 2nd root of 25 (within
-# .001 of the exact answer, which is simply 5 in this case).
+#User enters in 2 parameters, (N & k), and the computer does a bisection search for the kth root of N
+# it stops looking when it finds a number within .001 of the target (the Kth root of N)
 #This program is am improvement upon bubble sort, which has a complexity of O(n log n)
 #The time complexity of the binary search algorithm belongs to the O(log n) class
 
