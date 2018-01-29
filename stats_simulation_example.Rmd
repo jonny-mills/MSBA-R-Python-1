@@ -27,7 +27,7 @@ The annual demand for Wozac, a prescription drug manufactured and marketed by th
 
 
 ```{r}
-#Drugs
+#Author: Jonny Mills
 rm(list=ls())
 
 
