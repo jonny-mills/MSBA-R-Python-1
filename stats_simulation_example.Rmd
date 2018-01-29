@@ -18,12 +18,12 @@ Using R, I used simulation to determine the different levels of expected profit 
 
 
 ## Problem
-The annual demand for Wozac, a prescription drug manufactured and marketed by the NuFeelCompany,is normally distributed with mean 50,000 and standard deviation 12,000. We assume that demand during each of the next 10 years is an independent random draw from this distribution. NuFeel needs to determine how large a Wozac plant to build to maximize its expected pro???t over the next 10 years. If the company builds a plant that can produce x units of Wozac per year, it will cost $16 for each of these x units. NuFeel will produce only the amount demanded each year, and each unit of Wozac produced will sell for $3.70. Each unit of Wozac produced incurs a variable production cost of $0.20. It costs $0.40 per year to operate a unit of capacity. 1. Among the capacity levels of 30K,35K,40K,45K,50K,55K,and 60K units per year, which level maximizes expected profit? Use simulation to answer the question. 
+The annual demand for Wozac, a prescription drug manufactured and marketed by the NuFeelCompany,is normally distributed with mean 50,000 and standard deviation 12,000. We assume that demand during each of the next 10 years is an independent random draw from this distribution. NuFeel needs to determine how large a Wozac plant to build to maximize its expected profit over the next 10 years. If the company builds a plant that can produce x units of Wozac per year, it will cost $16 for each of these x units. NuFeel will produce only the amount demanded each year, and each unit of Wozac produced will sell for $3.70. Each unit of Wozac produced incurs a variable production cost of $0.20. It costs $0.40 per year to operate a unit of capacity. 1. Among the capacity levels of 30K,35K,40K,45K,50K,55K,and 60K units per year, which level maximizes expected profit? Use simulation to answer the question. 
 
 
 ## Which level maximizes expected profit?
 
-50K maximizes expected profit. 
+50K maximizes expected profit. See code and resulting chart.
 
 
 ```{r}
