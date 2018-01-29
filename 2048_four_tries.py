@@ -1,5 +1,6 @@
 #I wrote this program to allow the computer to automatically play 2048. It tries 4 times play
-#If your computer doesn't selenium or webdriver to run the code, see video tutorial here: https://www.screencast.com/t/oleCu3Oy
+#If your computer doesn't selenium or webdriver to run the code, it may not run.
+# see video tutorial here to watch the program in action: https://www.screencast.com/t/oleCu3Oy
 
 from selenium import webdriver 
 from selenium.webdriver.common.keys import Keys 
