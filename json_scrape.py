@@ -1,9 +1,5 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Wed Jun 21 11:06:43 2017
-
-@author: jrbrad
-"""
+# a simple program that webscrapes basketball data from an NBA database
+# in this case, we are calculating Steph Curry's jump shot percentage in the 2015 season
 
 import requests
 
