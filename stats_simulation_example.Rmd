@@ -23,7 +23,7 @@ The annual demand for Wozac, a prescription drug manufactured and marketed by th
 
 ## Which level maximizes expected profit?
 
-50K maximizes expected profit. See code and resulting chart.
+50K maximizes expected profit, with the expected value being $ 581268.89. See code and resulting chart.
 
 
 ```{r}
@@ -58,7 +58,6 @@ for (k in 1:sims){ #this outer for loop runs the simulations 20,000 times
 
 Profs <- matrix(data= c(capacity_levels,sum_profit/sims), nrow=7,ncol=2) #putting different profit levels into a matrix form
 dimnames(Profs) <- list(NULL,c('Quantity','Profit'))
-Profs
 plot(Profs)
 lines(Profs)
 abline(v=Profs[,1][which.max(Profs[,2])],lty=2)
